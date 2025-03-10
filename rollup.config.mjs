@@ -1,8 +1,8 @@
+import styles from "rollup-plugin-styles";
+import image from "@rollup/plugin-image";
 import babel from "@rollup/plugin-babel";
 import serve from "rollup-plugin-serve";
 import livereload from "rollup-plugin-livereload";
-import styles from "rollup-plugin-styles";
-import image from "@rollup/plugin-image";
 
 export default {
   input: "./index.js",
@@ -11,9 +11,9 @@ export default {
     format: "cjs",
   },
   plugins: [
-    babel({ babelHelpers: "bundled" }),
     styles(),
     image(),
+    babel({ babelHelpers: "bundled" }),
     serve({ open: true }),
     livereload(),
   ],
